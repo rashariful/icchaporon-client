@@ -19,7 +19,7 @@ const MainHeader = () => {
           </div>
 
           <div>
-            <a class="w-[100px] md:w-[125px] relative" href="/">
+            <Link to="/" className="w-[100px] md:w-[125px] relative">
               <img
                 alt="Ichaporon"
                 src={logo}
@@ -27,21 +27,21 @@ const MainHeader = () => {
                 decoding="async"
                 data-nimg="responsive"
               />
-            </a>
+            </Link>
           </div>
 
-          <div class="grow hidden lg:block relative">
+          <div className="grow hidden lg:block relative">
             <form
               method="post"
-              class="h-10 md:h-11 flex items-center rounded overflow-hidden bg-white"
+              className="h-10 md:h-11 flex items-center rounded overflow-hidden bg-white"
             >
               <input
                 type="search"
                 placeholder="Search"
-                class="font-SFProDisplayMedium h-full px-4 outline-none grow"
+                className="font-SFProDisplayMedium h-full px-4 outline-none grow"
                 value=""
               />
-              <button type="submit" class="h-full px-3 text-primary text-2xl">
+              <button type="submit" className="h-full px-3 text-primary text-2xl">
                 <HiSearch className="h-6"></HiSearch>
               </button>
             </form>
@@ -62,7 +62,9 @@ const MainHeader = () => {
                 <HiShoppingCart className="text-4xl text-orange-500"></HiShoppingCart>
               </div>
               <div>
-                <p className="text-gray-100 text-xl">Cart</p>
+                <Link to="/card" className="text-gray-100 text-xl">
+                  Cart
+                </Link>
               </div>
             </div>
 
@@ -71,10 +73,11 @@ const MainHeader = () => {
                 <HiUsers className="text-4xl text-orange-500"></HiUsers>
               </div>
               <div>
-                <p className="text-gray-100 text-xl">Account</p>
+                <Link to="/login" className="text-gray-100 text-xl">
+                  Account
+                </Link>
               </div>
             </div>
-            
           </div>
         </div>
       </div>

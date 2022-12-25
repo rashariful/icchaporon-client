@@ -1,5 +1,6 @@
 import React from "react";
 import { HiMenu } from "react-icons/hi";
+import { Link } from "react-router-dom";
 
 const TopHeader = () => {
   return (
@@ -22,7 +23,7 @@ const TopHeader = () => {
               <a href="/#">trending products</a>
             </li>
             <li>
-              <a href="/#">blog</a>
+              <Link to="/blog">blog</Link>
             </li>
             <li>
               <a href="/#">special offers</a>

@@ -8,6 +8,7 @@ import {
   signInWithPopup,
   signOut,
   onAuthStateChanged,
+  FacebookAuthProvider,
 
 } from "firebase/auth";
 import app from "../firebase/firebase.config";
@@ -16,6 +17,7 @@ import app from "../firebase/firebase.config";
 export const AuthContext = createContext();
 const auth = getAuth(app);
 const GoogleProvider = new GoogleAuthProvider();
+const FacebookProvider = new FacebookAuthProvider();
 
 
 const UserContext = ({ children }) => {
@@ -53,7 +55,11 @@ const UserContext = ({ children }) => {
     setLoading(true);
     return signOut(auth);
   };
-
+  // 06 this is for login by facebook
+ const singInUserWithFacebook = () =>{
+  setLoading(true)
+  return signInWithPopup(auth, FacebookProvider);
+ }
  
   // 08 use effect
   useEffect(() => {
@@ -74,6 +80,7 @@ const UserContext = ({ children }) => {
     setError,
     registerUser,
     registerUserWithGoogle,
+    singInUserWithFacebook,
     signInUser,
     signInUserWithGoogle,
     logoutUser,

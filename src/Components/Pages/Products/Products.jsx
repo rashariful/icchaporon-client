@@ -17,8 +17,8 @@ const Products = () => {
   console.log(products);
     return (
       <div>
-        <h2 className='text-4xl font-semibold text-rose-600'>Trending product</h2>
-        <div className="grid gap-10 mt-10 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 mb-16">
+        <h2 className='text-2xl font-semibold text-base-600'>Trending product</h2>
+        <div className="grid gap-3 mt-8 sm:grid-cols-4 md:grid-cols-4 lg:grid-cols-6 mb-16">
           {products?.map((product) => (
             <Product key={product.id} product={product}></Product>
           ))}
