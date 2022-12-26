@@ -53,7 +53,8 @@ const UserContext = ({ children }) => {
   // 05 this is for log out
   const logoutUser = () => {
     setLoading(true);
-    return signOut(auth);
+    return signOut(auth)
+    
   };
   // 06 this is for login by facebook
  const singInUserWithFacebook = () =>{

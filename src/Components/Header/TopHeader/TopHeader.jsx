@@ -9,6 +9,7 @@ const TopHeader = () => {
         <div className="flex items-center gap-3 h-12 w-52 px-3 bg-rose-500">
           <HiMenu className="text-slate-100 text-2xl"></HiMenu>
           <p className="text-slate-100 font-semibold">Browse Categories</p>
+         
         </div>
 
         <div className="flex items-center">

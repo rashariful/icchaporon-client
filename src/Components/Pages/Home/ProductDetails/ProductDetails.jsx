@@ -2,62 +2,62 @@ import React from "react";
 import { useLoaderData } from "react-router-dom";
 
 const ProductDetails = () => {
-    const product = useLoaderData()
+  const product = useLoaderData();
   const { brand, category, description, price, title, image, id } = product;
   return (
     <section>
-      <div class="bg-white py-6 sm:py-8 lg:py-12">
-        <div class="max-w-screen-xl px-4 md:px-8 mx-auto">
-          <div class="grid md:grid-cols-2 gap-8">
-            <div class="grid lg:grid-cols-5 gap-4">
-              <div class="flex lg:flex-col order-last lg:order-none gap-4">
-                <div class="bg-gray-100 rounded-lg overflow-hidden">
+      <div className="bg-white py-6 sm:py-8 lg:py-12">
+        <div className="max-w-screen-xl px-4 md:px-8 mx-auto">
+          <div className="grid md:grid-cols-2 gap-8">
+            <div className="grid lg:grid-cols-5 gap-4">
+              <div className="flex lg:flex-col order-last lg:order-none gap-4">
+                <div className="bg-gray-100 rounded-lg overflow-hidden">
                   <img
                     src={image}
                     loading="lazy"
                     alt="by Himanshu Dewangan"
-                    class="w-full h-full object-cover object-center"
+                    className="w-full h-full object-cover object-center"
                   />
                 </div>
 
-                <div class="bg-gray-100 rounded-lg overflow-hidden">
+                <div className="bg-gray-100 rounded-lg overflow-hidden">
                   <img
                     src={image}
                     loading="lazy"
                     alt=" by Himanshu Dewangan"
-                    class="w-full h-full object-cover object-center"
+                    className="w-full h-full object-cover object-center"
                   />
                 </div>
 
-                <div class="bg-gray-100 rounded-lg overflow-hidden">
+                <div className="bg-gray-100 rounded-lg overflow-hidden">
                   <img
                     src={image}
                     loading="lazy"
                     alt=" by Himanshu Dewangan"
-                    class="w-full h-full object-cover object-center"
+                    className="w-full h-full object-cover object-center"
                   />
                 </div>
               </div>
 
-              <div class="lg:col-span-4 bg-gray-100 rounded-lg overflow-hidden relative">
+              <div className="lg:col-span-4 bg-gray-100 rounded-lg overflow-hidden relative">
                 <img
                   src={image}
                   loading="lazy"
                   alt=" by Himanshu Dewangan"
-                  class="w-full h-full"
+                  className="w-full h-full"
                 />
 
-                <span class="bg-red-500 text-white text-sm tracking-wider uppercase rounded-br-lg absolute left-0 top-0 px-3 py-1.5">
+                <span className="bg-red-500 text-white text-sm tracking-wider uppercase rounded-br-lg absolute left-0 top-0 px-3 py-1.5">
                   sale
                 </span>
 
                 <a
                   href="/#"
-                  class="inline-block bg-white hover:bg-gray-100 focus-visible:ring ring-indigo-300 text-gray-500 active:text-gray-700 border text-sm md:text-base font-semibold text-center rounded-lg outline-none transition duration-100 absolute right-4 top-4 px-3.5 py-3"
+                  className="inline-block bg-white hover:bg-gray-100 focus-visible:ring ring-indigo-300 text-gray-500 active:text-gray-700 border text-sm md:text-base font-semibold text-center rounded-lg outline-none transition duration-100 absolute right-4 top-4 px-3.5 py-3"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    class="w-6 h-6"
+                    className="w-6 h-6"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -73,23 +73,23 @@ const ProductDetails = () => {
               </div>
             </div>
 
-            <div class="md:py-8">
-              <div class="mb-2 md:mb-3">
-                <span class="inline-block text-gray-500 mb-0.5">
+            <div className="md:py-8">
+              <div className="mb-2 md:mb-3">
+                <span className="inline-block text-gray-500 mb-0.5">
                   Category: {category}
                 </span>
-                <h2 class="text-gray-800 text-2xl lg:text-3xl font-bold">
-                 {title}
+                <h2 className="text-gray-800 text-2xl lg:text-3xl font-bold">
+                  {title}
                 </h2>
               </div>
 
-              <div class="flex items-center gap-3 mb-6 md:mb-10">
-                <div class="h-7 flex items-center bg-indigo-500 text-white rounded-full gap-1 px-2">
-                  <span class="text-sm">4.2</span>
+              <div className="flex items-center gap-3 mb-6 md:mb-10">
+                <div className="h-7 flex items-center bg-indigo-500 text-white rounded-full gap-1 px-2">
+                  <span className="text-sm">4.2</span>
 
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    class="w-5 h-5"
+                    className="w-5 h-5"
                     viewBox="0 0 20 20"
                     fill="currentColor"
                   >
@@ -97,83 +97,85 @@ const ProductDetails = () => {
                   </svg>
                 </div>
 
-                <span class="text-gray-500 text-sm transition duration-100">
+                <span className="text-gray-500 text-sm transition duration-100">
                   56 ratings
                 </span>
               </div>
 
-              <div class="mb-4 md:mb-6">
-                <span class="inline-block text-gray-500 text-sm md:text-base font-semibold mb-3">
+              <div className="mb-4 md:mb-6">
+                <span className="inline-block text-gray-500 text-sm md:text-base font-semibold mb-3">
                   Color
                 </span>
 
-                <div class="flex flex-wrap gap-2">
-                  <span class="w-8 h-8 bg-gray-800 border ring-2 ring-offset-1 ring-gray-800 rounded-full transition duration-100"></span>
+                <div className="flex flex-wrap gap-2">
+                  <span className="w-8 h-8 bg-gray-800 border ring-2 ring-offset-1 ring-gray-800 rounded-full transition duration-100"></span>
                   <button
                     type="button"
-                    class="w-8 h-8 bg-gray-500 border ring-2 ring-offset-1 ring-transparent hover:ring-gray-200 rounded-full transition duration-100"
+                    className="w-8 h-8 bg-gray-500 border ring-2 ring-offset-1 ring-transparent hover:ring-gray-200 rounded-full transition duration-100"
                   ></button>
                   <button
                     type="button"
-                    class="w-8 h-8 bg-gray-200 border ring-2 ring-offset-1 ring-transparent hover:ring-gray-200 rounded-full transition duration-100"
+                    className="w-8 h-8 bg-gray-200 border ring-2 ring-offset-1 ring-transparent hover:ring-gray-200 rounded-full transition duration-100"
                   ></button>
                   <button
                     type="button"
-                    class="w-8 h-8 bg-white border ring-2 ring-offset-1 ring-transparent hover:ring-gray-200 rounded-full transition duration-100"
+                    className="w-8 h-8 bg-white border ring-2 ring-offset-1 ring-transparent hover:ring-gray-200 rounded-full transition duration-100"
                   ></button>
                 </div>
               </div>
 
-              <div class="mb-8 md:mb-10">
-                <span class="inline-block text-gray-500 text-sm md:text-base font-semibold mb-3">
+              <div className="mb-8 md:mb-10">
+                <span className="inline-block text-gray-500 text-sm md:text-base font-semibold mb-3">
                   Size
                 </span>
 
-                <div class="flex flex-wrap gap-3">
+                <div className="flex flex-wrap gap-3">
                   <button
                     type="button"
-                    class="w-12 h-8 flex justify-center items-center bg-white hover:bg-gray-100 active:bg-gray-200 text-gray-800 text-sm font-semibold text-center border rounded-md transition duration-100"
+                    className="w-12 h-8 flex justify-center items-center bg-white hover:bg-gray-100 active:bg-gray-200 text-gray-800 text-sm font-semibold text-center border rounded-md transition duration-100"
                   >
                     XS
                   </button>
                   <button
                     type="button"
-                    class="w-12 h-8 flex justify-center items-center bg-white hover:bg-gray-100 active:bg-gray-200 text-gray-800 text-sm font-semibold text-center border rounded-md transition duration-100"
+                    className="w-12 h-8 flex justify-center items-center bg-white hover:bg-gray-100 active:bg-gray-200 text-gray-800 text-sm font-semibold text-center border rounded-md transition duration-100"
                   >
                     S
                   </button>
-                  <span class="w-12 h-8 flex justify-center items-center bg-indigo-500 text-white text-sm font-semibold text-center border border-indigo-500 rounded-md cursor-default">
+                  <span className="w-12 h-8 flex justify-center items-center bg-indigo-500 text-white text-sm font-semibold text-center border border-indigo-500 rounded-md cursor-default">
                     M
                   </span>
                   <button
                     type="button"
-                    class="w-12 h-8 flex justify-center items-center bg-white hover:bg-gray-100 active:bg-gray-200 text-gray-800 text-sm font-semibold text-center border rounded-md transition duration-100"
+                    className="w-12 h-8 flex justify-center items-center bg-white hover:bg-gray-100 active:bg-gray-200 text-gray-800 text-sm font-semibold text-center border rounded-md transition duration-100"
                   >
                     L
                   </button>
-                  <span class="w-12 h-8 flex justify-center items-center bg-white text-gray-400 text-sm font-semibold text-center border border-transparent rounded-md cursor-not-allowed">
+                  <span className="w-12 h-8 flex justify-center items-center bg-white text-gray-400 text-sm font-semibold text-center border border-transparent rounded-md cursor-not-allowed">
                     XL
                   </span>
                 </div>
               </div>
 
-              <div class="mb-4">
-                <div class="flex items-end gap-2">
-                  <span class="text-gray-800 text-xl md:text-2xl font-bold">
+              <div className="mb-4">
+                <div className="flex items-end gap-2">
+                  <span className="text-gray-800 text-xl md:text-2xl font-bold">
                     ${price}
                   </span>
-                  <span class="text-red-500 line-through mb-0.5">$30.00</span>
+                  <span className="text-red-500 line-through mb-0.5">
+                    $30.00
+                  </span>
                 </div>
 
-                <span class="text-gray-500 text-sm">
+                <span className="text-gray-500 text-sm">
                   incl. VAT plus shipping
                 </span>
               </div>
 
-              <div class="flex items-center text-gray-500 gap-2 mb-6">
+              <div className="flex items-center text-gray-500 gap-2 mb-6">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  class="w-6 h-6"
+                  className="w-6 h-6"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -187,20 +189,20 @@ const ProductDetails = () => {
                   />
                 </svg>
 
-                <span class="text-sm">2-4 day shipping</span>
+                <span className="text-sm">2-4 day shipping</span>
               </div>
 
-              <div class="flex gap-2.5">
+              <div className="flex gap-2.5">
                 <a
                   href="/#"
-                  class="inline-block flex-1 sm:flex-none bg-indigo-500 hover:bg-indigo-600 active:bg-indigo-700 focus-visible:ring ring-indigo-300 text-white text-sm md:text-base font-semibold text-center rounded-lg outline-none transition duration-100 px-8 py-3"
+                  className="inline-block flex-1 sm:flex-none bg-indigo-500 hover:bg-indigo-600 active:bg-indigo-700 focus-visible:ring ring-indigo-300 text-white text-sm md:text-base font-semibold text-center rounded-lg outline-none transition duration-100 px-8 py-3"
                 >
                   Add to cart
                 </a>
 
                 <a
                   href="/#"
-                  class="inline-block bg-gray-200 hover:bg-gray-300 focus-visible:ring ring-indigo-300 text-gray-500 active:text-gray-700 text-sm md:text-base font-semibold text-center rounded-lg outline-none transition duration-100 px-8 py-3"
+                  className="inline-block bg-gray-200 hover:bg-gray-300 focus-visible:ring ring-indigo-300 text-gray-500 active:text-gray-700 text-sm md:text-base font-semibold text-center rounded-lg outline-none transition duration-100 px-8 py-3"
                 >
                   Buy now
                 </a>

@@ -6,6 +6,7 @@ import ProductDetails from "../Components/Pages/Home/ProductDetails/ProductDetai
 import Login from "../Components/Pages/Login/Login";
 import NotFound from "../Components/Pages/NotFound/NotFound";
 import Register from "../Components/Pages/Register/Register";
+import PrivateRoute from "../Components/PrivateRoute/PrivateRoute";
 import Main from "../Layout/Main/Main";
 
 const router = createBrowserRouter([
@@ -24,14 +25,19 @@ const router = createBrowserRouter([
       },
       {
         path: "/card",
-        element: <AddToCart></AddToCart>,
+        element: (
+          <PrivateRoute>
+            {" "}
+            <AddToCart></AddToCart>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/product-details/:id",
         element: <ProductDetails></ProductDetails>,
-        loader: ({params})=>{
-            return fetch(`https://fakestoreapi.com/products/${params.id}`);
-        }
+        loader: ({ params }) => {
+          return fetch(`https://fakestoreapi.com/products/${params.id}`);
+        },
       },
       {
         path: "/blog",
