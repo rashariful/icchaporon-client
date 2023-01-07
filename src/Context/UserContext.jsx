@@ -12,7 +12,7 @@ import {
 
 } from "firebase/auth";
 import app from "../firebase/firebase.config";
-
+import { useQuery } from "@tanstack/react-query";
 
 export const AuthContext = createContext();
 const auth = getAuth(app);
@@ -24,6 +24,46 @@ const UserContext = ({ children }) => {
   const [user, setUser] = useState({});
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
+
+  
+   const [cart, setCart] = useState([]);
+   console.log(cart);
+
+   const { data: products = [], refetch } = useQuery({
+     queryKey: ["products"],
+     queryFn: async () => {
+       const res = await fetch(`http://localhost:5000/products`);
+       const data = await res.json();
+       return data;
+     },
+   });
+ 
+   // add to cart function
+   const addToCart = (data) => {
+     setCart([...cart, { ...data, quantity: 1 }]);
+   };
+   // item remove from cart
+  function removeFromCart(id) {
+    setCart((cart) => {
+      return cart.filter((item) => item._id !== id);
+    });
+  }
+
+    function increaseCartQuantity(id) {
+      setCart((cart) => {
+        if (cart.find((item) => item.id === id) == null) {
+          return [...cart, { id, quantity: 1 }];
+        } else {
+          return cart.map((item) => {
+            if (item._id === id) {
+              return { ...item, quantity: item.quantity + 1 };
+            } else {
+              return item;
+            }
+          });
+        }
+      });
+    }
 
   // 01 This function for register user
   const registerUser = (email, password) => {
@@ -85,6 +125,11 @@ const UserContext = ({ children }) => {
     signInUser,
     signInUserWithGoogle,
     logoutUser,
+    products,
+    addToCart,
+    cart,
+    removeFromCart,
+    increaseCartQuantity,
   };
   return (
     <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>

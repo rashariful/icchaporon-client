@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 const NotFound = () => {
   return (
     <section>
@@ -11,18 +11,12 @@ const NotFound = () => {
               className="inline-flex items-center text-black-800 text-2xl md:text-3xl font-bold gap-2.5 mb-8"
               aria-label="logo"
             >
-              <svg
-                width="95"
-                height="94"
-                viewBox="0 0 95 94"
-                className="w-6 h-auto text-indigo-500"
-                fill="currentColor"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path d="M96 0V47L48 94H0V47L48 0H96Z" />
-              </svg>
               Icchaporon
             </a>
+            <img
+              src="https://www.facebook.com/photo/?fbid=452328633605615&set=a.452328626938949"
+              alt=""
+            />
 
             <p className="text-indigo-500 text-sm md:text-base font-semibold uppercase mb-4">
               That’s a 404
@@ -35,12 +29,12 @@ const NotFound = () => {
               The page you’re looking for doesn’t exist.
             </p>
 
-            <a
-              href="#"
+            <Link
+              to="/"
               className="inline-block bg-gray-200 hover:bg-gray-300 focus-visible:ring ring-indigo-300 text-gray-500 active:text-gray-700 text-sm md:text-base font-semibold text-center rounded-lg outline-none transition duration-100 px-8 py-3"
             >
               Go home
-            </a>
+            </Link>
           </div>
         </div>
       </div>

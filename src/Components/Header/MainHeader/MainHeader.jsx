@@ -12,7 +12,12 @@ import logo from "../../../Assets/img/logo.png";
 import { AuthContext } from "../../../Context/UserContext";
 
 const MainHeader = () => {
-  const { user, logoutUser } = useContext(AuthContext);
+  const { user, logoutUser,cart } = useContext(AuthContext);
+  const handleSearch = (e) =>{
+  e.preventDefault();
+  console.log(e.target.value);
+
+  }
   // this is for log out function
   const handleLogOut = () => {
     logoutUser()
@@ -21,8 +26,9 @@ const MainHeader = () => {
         console.log(error);
       });
   };
+
   return (
-    <div className="bg-slate-700 sticky top-0 z-50">
+    <div className="bg-slate-900 sticky top-0 z-50">
       <div className="navbar max-w-screen-2xl mx-auto sticky top-0 z-50  flex justify-around drop-shadow-sm ">
         <div className="navbar-start flex justify-between gap-5 w-full">
           <div className="dropdown flex justify-between">
@@ -50,10 +56,10 @@ const MainHeader = () => {
               className="h-10 md:h-11 flex items-center rounded overflow-hidden bg-white"
             >
               <input
-                type="search"
-                placeholder="Search"
+                onChange={handleSearch}
+                type="text"
+                placeholder="Type your product"
                 className="font-SFProDisplayMedium h-full px-4 outline-none grow"
-                value=""
               />
               <button
                 type="submit"
@@ -75,8 +81,9 @@ const MainHeader = () => {
             </div>
 
             <div className="flex items-center gap-2">
-              <div>
+              <div className="indicator">
                 <HiShoppingCart className="text-4xl text-orange-500"></HiShoppingCart>
+                <span className="badge badge-sm indicator-item bg-white text-gray-800">{cart.length}</span>
               </div>
               <div>
                 <Link to="/card" className="text-gray-100 text-xl">
@@ -105,14 +112,17 @@ const MainHeader = () => {
                       tabIndex={0}
                       className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
                     >
-                      <li>
-                        <a className="justify-between">
-                          Profile
-                          <span className="badge">New</span>
-                        </a>
+                      <li className="">
+                        <Link to="/blog">My Account</Link>
+                      </li>
+                      <li className="">
+                        <Link to="/blog">My Order</Link>
+                      </li>
+                      <li className="">
+                        <Link to="/card">My Cart</Link>
                       </li>
                       <li>
-                        <a>Settings</a>
+                        <Link to="/dashboard">Dashboard</Link>
                       </li>
                       <li>
                         <Link to="/" onClick={handleLogOut}>

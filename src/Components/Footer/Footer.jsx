@@ -1,5 +1,7 @@
 import React from "react";
 import { FaEdgeLegacy } from "react-icons/fa";
+import logo from "../../Assets/img/logo.png";
+
 
 const Footer = () => {
   return (
@@ -14,12 +16,8 @@ const Footer = () => {
                 className="inline-flex items-center text-gray-100 text-xl md:text-2xl font-bold gap-2"
                 aria-label="logo"
               >
-                <img
-                  className="w-20 h-auto rounded-md"
-                  src="https://www.logodesign.net/logo/hiker-on-mountain-top-6158ld.png?size=2&industry=travel-hotel"
-                  alt=""
-                />
-                Explore the World
+                <img className="w-20 h-auto rounded-md" src={logo} alt="" />
+                Icchaporon
               </a>
             </div>
 

@@ -6,16 +6,23 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 // import required modules
-import { Pagination } from "swiper";
+import { Autoplay, Pagination, Navigation } from "swiper";
 
 const HomeSlider = () => {
   return (
     <>
       <Swiper
-        pagination={{
-          dynamicBullets: true,
+        spaceBetween={30}
+        centeredSlides={true}
+        autoplay={{
+          delay: 2500,
+          disableOnInteraction: false,
         }}
-        modules={[Pagination]}
+        pagination={{
+          clickable: true,
+        }}
+        navigation={true}
+        modules={[Autoplay, Pagination, Navigation]}
         className="mySwiper"
       >
         <SwiperSlide>
